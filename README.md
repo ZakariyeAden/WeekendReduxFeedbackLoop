@@ -7,3 +7,24 @@
 Your project description goes here. What problem did you solve? How did you solve it?
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+
+
+## Plan
+[X] - Run NPM install and Set up the DB and Routes for POST. Strech: DELETE, PUT, and GET
+[] - For Redux, Set up the createStore, reducer,provider in index.js
+[] - Make the Components of the multi-part forms 
+[] - Use mui for the input styling and buttons
+[] - Set up React Router. Dont need nav bar, make Routes for the Components
+[] - Allow them to go to the next page when clicked next. Make the submit button go to a Thank you page
+[] - Use useState to get the onChange for the Forms
+[] - Use dispatch to get the action payload.
+[] - The `Comments` step does not need to be validated,
+[] - Use condional rendering to show the button for `Incomplete` and `Complete`
+
+[] - Each step should only allow the user to advance to the next step if a score was provided.
+[] - Map the reducer and display the user input in the Review your Feedback
+
+[] - When they submit it should send to the server 
+[] - Use axios POST in the review section
+[] - They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
