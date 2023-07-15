@@ -12,9 +12,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ## Plan
 [X] - Run NPM install and Set up the DB and Routes for POST. Strech: DELETE, PUT, and GET
-[] - For Redux, Set up the createStore, reducer,provider in index.js
-[] - Make the Components of the multi-part forms 
-[] - Use mui for the input styling and buttons
+[X] - For Redux, Set up the createStore, reducer,provider in index.js
+[X] - Make the Components of the multi-part forms 
+[] - Use mui for the input styling and buttons.Make the forms in the Components
 [] - Set up React Router. Dont need nav bar, make Routes for the Components
 [] - Allow them to go to the next page when clicked next. Make the submit button go to a Thank you page
 [] - Use useState to get the onChange for the Forms
