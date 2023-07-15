@@ -5,8 +5,8 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 // HOOKS
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-const Comments = () => {
-  const [input, setInput] = useState({ comments: "" });
+const Comments = ({input, setInput}) => {
+  // const [input, setInput] = useState({ comments: "" });
   const dispatch = useDispatch();
   const handleComments = event => {
     setInput({

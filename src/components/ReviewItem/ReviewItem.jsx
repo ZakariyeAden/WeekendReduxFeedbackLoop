@@ -4,10 +4,10 @@ const ReviewItem = ({reveiw}) => {
   return (
     <div>
       <ul>
-        <li>{reveiw.feelings}</li>
-        <li>{reveiw.support}</li>
-        <li>{reveiw.understanding}</li>
-        <li>{reveiw.comments}</li>
+        <li>Feelings:{reveiw.feelings}</li>
+        <li>Support:{reveiw.support}</li>
+        <li>Understanding:{reveiw.understanding}</li>
+        <li>Comments:{reveiw.comments}</li>
       </ul>
     </div>
   )

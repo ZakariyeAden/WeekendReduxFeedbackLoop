@@ -5,8 +5,8 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 // HOOKS
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-const Feelings = () => {
-  const [input, setInput] = useState({feelings:''})
+const Feelings = ({input,setInput}) => {
+  // const [input, setInput] = useState({feelings:''})
   const dispatch = useDispatch();
   const handleFeelings = (event) => {
     setInput({

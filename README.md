@@ -23,7 +23,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [] - Use condional rendering to show the button for `Incomplete` and `Complete`
 
 [] - Each step should only allow the user to advance to the next step if a score was provided.
-[] - Map the reducer and display the user input in the Review your Feedback
+[X] - Map the reducer and display the user input in the Review your Feedback
 
 [] - When they submit it should send to the server.Make the submit button go to a Thank you page
 [] - Use axios POST in the review section

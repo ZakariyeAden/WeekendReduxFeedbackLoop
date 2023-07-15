@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 // Components
@@ -11,29 +11,31 @@ import Comments from "../Comments/Comments";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
+    const [input, setInput] = useState({ feelings:'',support:'',understanding:'',comments:'' });
+
   return (
     <div className="App">
       <Router>
-      <header className="App-header">
-        <h1 className="App-title">Feedback!</h1>
-        <h4>Don't forget it!</h4>
-      </header>
+        <header className="App-header">
+          <h1 className="App-title">Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
 
-      <Route path="/" exact>
-        <Feelings />
-      </Route>
-      <Route path="/understanding">
-        <Understanding />
-      </Route>
-      <Route path="/comments">
-        <Comments />
-      </Route>
-      <Route path="/support">
-        <Support />
-      </Route>
-      <Route path="/review">
-        <Review />
-      </Route>
+        <Route path="/" exact>
+          <Feelings input={input} setInput={setInput}/>
+        </Route>
+        <Route path="/understanding">
+          <Understanding input={input} setInput={setInput}/>
+        </Route>
+        <Route path="/comments">
+          <Comments input={input} setInput={setInput}/>
+        </Route>
+        <Route path="/support">
+          <Support input={input} setInput={setInput}/>
+        </Route>
+        <Route path="/review">
+          <Review />
+        </Route>
       </Router>
     </div>
   );

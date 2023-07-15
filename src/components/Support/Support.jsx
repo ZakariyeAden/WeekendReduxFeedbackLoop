@@ -5,8 +5,8 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 // HOOKS
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-const Support = () => {
-  const [input, setInput] = useState({ support: "" });
+const Support = ({input, setInput}) => {
+  // const [input, setInput] = useState({ support: "" });
   const dispatch = useDispatch();
   const handleSupport = event => {
     setInput({
