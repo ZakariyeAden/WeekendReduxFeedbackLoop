@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import axios from "axios";
 import "./App.css";
 // Components
@@ -9,6 +9,7 @@ import Support from "../Support/Support";
 import Comments from "../Comments/Comments";
 // React Router
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
