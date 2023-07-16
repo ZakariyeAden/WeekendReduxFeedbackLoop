@@ -15,6 +15,7 @@ const Comments = () => {
       type: "ADD_COMMENT",
       payload: input,
     });
+    // Go to review page
     history.push("/review");
   };
   return (

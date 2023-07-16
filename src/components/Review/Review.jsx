@@ -12,7 +12,6 @@ const Review = () => {
   const understanding = useSelector(state => state.understanding);
   // HOOKS
   const history = useHistory();
-  const dispatch = useDispatch();
   const [showSubmit, setShowSubmit] = useState(false);
 
   //****  Hide the submit if its not filled
@@ -38,14 +37,11 @@ const Review = () => {
       .catch(err => {
         console.log("ERRROR in submiting to the Server DB", err);
       });
-
-      dispatch({
-        type:'THANKYOU'
-      })
+      // Go to thank you page
       history.push('/thankyou')
   };
   return (
-    <form className="review">
+    <div className="review">
       <h2>Review Your Feedback</h2>
       <ul>
         <li>Feelings:{feeling}</li>
@@ -65,7 +61,7 @@ const Review = () => {
         Disabled
       </Button>
       )} */}
-    </form>
+    </div>
   );
 };
 

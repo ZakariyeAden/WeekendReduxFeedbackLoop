@@ -16,6 +16,7 @@ const Feelings = () => {
       type: "ADD_FEELING",
       payload: input,
     });
+    // Go to understanding page
     history.push('/understanding')
   };
 

@@ -15,6 +15,7 @@ const Understanding = () => {
       type: "ADD_UNDERSTANDING",
       payload: input,
     });
+    // GO to support page
     history.push("/support");
   };
   return (

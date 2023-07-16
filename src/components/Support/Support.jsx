@@ -16,6 +16,7 @@ const Support = () => {
       type: "ADD_SUPPORT",
       payload: input,
     });
+    // Go to comments page
     history.push("/comments");
   };
   return (
