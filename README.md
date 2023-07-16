@@ -19,7 +19,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [X] - Allow them to go to the next page when clicked next. 
 [X] - Use useState to get the onChange for the Forms
 [X] - Use dispatch to get the action payload.
-[] - The `Comments` step does not need to be validated,
+[X] - The `Comments` step does not need to be validated,
 [] - Use condional rendering to show the button for `Incomplete` and `Complete`
 
 [] - Each step should only allow the user to advance to the next step if a score was provided.

@@ -29,6 +29,7 @@ const Feelings = () => {
           label="Feeling?"
           variant="outlined"
           type="number"
+          required
           onChange={event => setInput(event.target.value)}
         />
         <Button variant="contained" type="submit" onClick={handleFeelings}>

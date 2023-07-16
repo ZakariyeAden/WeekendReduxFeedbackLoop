@@ -25,6 +25,7 @@ const Understanding = () => {
         label="Understanding?"
         variant="outlined"
         type="number"
+        required
         onChange={event => setInput(event.target.value)}
         value={input}
       />
