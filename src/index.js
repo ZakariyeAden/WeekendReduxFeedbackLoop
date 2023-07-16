@@ -32,6 +32,12 @@ const support = (state = 0, action) => {
     }
      return state;
  }
+ const reset = (state = [], action) => {
+     if (action.type === "THANKYOU") {
+        return feeling(undefined, action) && support(undefined, action) && comment(undefined, action) && understanding(undefined, action);
+      } 
+      return state;
+ }
 
 // Store, The store is the big JavaScript Object that holds all of the information for our application
 const store = createStore(
@@ -39,7 +45,8 @@ const store = createStore(
         feeling,
         support,
         comment,
-        understanding
+        understanding,
+        reset
     }),
     applyMiddleware(logger)
 );

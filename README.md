@@ -25,6 +25,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [] - Each step should only allow the user to advance to the next step if a score was provided.
 [X] - Map the reducer and display the user input in the Review your Feedback
 
-[] - When they submit it should send to the server.Make the submit button go to a Thank you page
-[] - Use axios POST in the review section
-[] - They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
+[X] - When they submit it should send to the server.Make the submit button go to a Thank you page
+[X] - Use axios POST in the review section
+[X] - They can then click the button to take a new survey, which needs to reset all the data and go back to the first step.
