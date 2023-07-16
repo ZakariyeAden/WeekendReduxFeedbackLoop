@@ -30,7 +30,7 @@ const Comments = () => {
         value={input}
       />
 
-      <Button variant="contained" onClick={handleComments}>Next</Button>
+      <Button variant="contained" onClick={handleComments} style={{margin: "0.8rem 2rem"}}>Next</Button>
     </form>
   );
 };

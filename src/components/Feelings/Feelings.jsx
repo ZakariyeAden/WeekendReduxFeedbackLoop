@@ -33,7 +33,7 @@ const Feelings = () => {
           required
           onChange={event => setInput(event.target.value)}
         />
-        <Button variant="contained" type="submit" onClick={handleFeelings}>
+        <Button variant="contained" type="submit" onClick={handleFeelings} style={{margin: "0.8rem 2rem"}}>
           Next
         </Button>
       </form>

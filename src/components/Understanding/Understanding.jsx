@@ -31,7 +31,7 @@ const Understanding = () => {
         value={input}
       />
 
-      <Button variant="contained" onClick={handleUnderstanding}>
+      <Button variant="contained" onClick={handleUnderstanding} style={{margin: "0.8rem 2rem"}}>
         Next
       </Button>
     </form>

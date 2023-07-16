@@ -31,7 +31,7 @@ const Support = () => {
         onChange={event => setInput(event.target.value)}
         value={input}
       />
-      <Button variant="contained" onClick={handleSupport}>
+      <Button variant="contained" onClick={handleSupport} style={{margin: "0.8rem 2rem"}}>
         Next
       </Button>
     </form>

@@ -6,6 +6,9 @@
 
 Your project description goes here. What problem did you solve? How did you solve it?
 
+- I noticed in the action.payload in the logs it was showing multiple inputs with One Reducer.Also displaying the same from the logs
+- I made multiple reducers but I believe there should still be a way to make it work with one Reducer
+
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 

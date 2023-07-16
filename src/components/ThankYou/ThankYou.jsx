@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React from "react";
 // HOOKS
 import { useDispatch } from "react-redux";
@@ -15,7 +16,7 @@ const Thankyou = () => {
   return (
     <div>
       <h3>Thank You for your Feedback!</h3>
-      <button onClick={handleReset}>Submit a New Feedback</button>
+      <Button onClick={handleReset} variant="contained">Submit a New Feedback</Button>
     </div>
   );
 };
