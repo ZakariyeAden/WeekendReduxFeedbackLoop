@@ -17,8 +17,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [X] - Use mui for the input styling and buttons.Make the forms in the Components
 [X] - Set up React Router. Dont need nav bar, make Routes for the Components
 [X] - Allow them to go to the next page when clicked next. 
-[] - Use useState to get the onChange for the Forms
-[] - Use dispatch to get the action payload.
+[X] - Use useState to get the onChange for the Forms
+[X] - Use dispatch to get the action payload.
 [] - The `Comments` step does not need to be validated,
 [] - Use condional rendering to show the button for `Incomplete` and `Complete`
 

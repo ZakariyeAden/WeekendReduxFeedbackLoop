@@ -1,23 +1,22 @@
 import React from "react";
 import { TextField, Button } from "@mui/material";
-// React Router
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 // HOOKS
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-const Understanding = ({input, setInput}) => {
-  // const [input, setInput] = useState({ understanding: "" });
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+const Understanding = () => {
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
+  // Handle submit
   const handleUnderstanding = event => {
-    setInput({
-      ...input,
-      understanding: event.target.value,
+    event.preventDefault();
+    dispatch({
+      type: "ADD_UNDERSTANDING",
+      payload: input,
     });
+    history.push("/support");
   };
-  dispatch({
-    type: "GET_FEEDBACK",
-    payload: input,
-  });
   return (
     <form>
       <h3>How well are you understanding?</h3>
@@ -26,11 +25,13 @@ const Understanding = ({input, setInput}) => {
         label="Understanding?"
         variant="outlined"
         type="number"
-        onChange={handleUnderstanding}
+        onChange={event => setInput(event.target.value)}
+        value={input}
       />
-      <Link to="/support">
-      <Button variant="contained">Next</Button>
-      </Link>
+
+      <Button variant="contained" onClick={handleUnderstanding}>
+        Next
+      </Button>
     </form>
   );
 };

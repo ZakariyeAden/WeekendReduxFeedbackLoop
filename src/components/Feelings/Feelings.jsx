@@ -1,33 +1,42 @@
-import React from 'react'
-import { TextField,Button } from '@mui/material'
-// React Router
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import React from "react";
+import { TextField, Button } from "@mui/material";
 // HOOKS
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-const Feelings = ({input,setInput}) => {
-  // const [input, setInput] = useState({feelings:''})
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+const Feelings = () => {
+  const [input, setInput] = useState();
   const dispatch = useDispatch();
-  const handleFeelings = (event) => {
-    setInput({
-      ...input,
-      feelings:event.target.value
+  const history = useHistory();
+  // Handle Submit
+  const handleFeelings = event => {
+    event.preventDefault();
+
+    dispatch({
+      type: "ADD_FEELING",
+      payload: input,
     });
+    history.push('/understanding')
+  };
 
-  }
-  dispatch({
-    type:"GET_FEEDBACK",
-    payload:input
-  })
   return (
-    <form>
-      <h3>How are you feeling Today?</h3>
-      <TextField id="outlined-basic" label="Feeling?" variant="outlined" type="number" onChange={handleFeelings}/>
-      <Link to="/understanding">
-      <Button variant="contained" type="submit">Next</Button>
-      </Link>
-    </form>
-  )
-}
+    <div>
+      <form >
+        <h3>How are you feeling Today?</h3>
+        <TextField
+          id="outlined-basic"
+          value={input}
+          label="Feeling?"
+          variant="outlined"
+          type="number"
+          onChange={event => setInput(event.target.value)}
+        />
+        <Button variant="contained" type="submit" onClick={handleFeelings}>
+          Next
+        </Button>
+      </form>
+    </div>
+  );
+};
 
-export default Feelings
+export default Feelings;

@@ -1,23 +1,23 @@
 import React from "react";
 import { TextField, Button } from "@mui/material";
-// React Router
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+
 // HOOKS
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-const Support = ({input, setInput}) => {
-  // const [input, setInput] = useState({ support: "" });
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+const Support = () => {
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
+  // Handle Submit
   const handleSupport = event => {
-    setInput({
-      ...input,
-      support: event.target.value,
+    event.preventDefault();
+    dispatch({
+      type: "ADD_SUPPORT",
+      payload: input,
     });
+    history.push("/comments");
   };
-  dispatch({
-    type: "GET_FEEDBACK",
-    payload: input,
-  });
   return (
     <form>
       <h3>How well are you being supported?</h3>
@@ -26,11 +26,12 @@ const Support = ({input, setInput}) => {
         label="Support?"
         variant="outlined"
         type="number"
-        onChange={handleSupport}
+        onChange={event => setInput(event.target.value)}
+        value={input}
       />
-      <Link to="/comments">
-        <Button variant="contained">Next</Button>
-      </Link>
+      <Button variant="contained" onClick={handleSupport}>
+        Next
+      </Button>
     </form>
   );
 };

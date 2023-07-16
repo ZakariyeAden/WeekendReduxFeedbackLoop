@@ -5,15 +5,14 @@ import { useSelector } from 'react-redux'
 // Components
 import ReviewItem from '../ReviewItem/ReviewItem'
 const Review = () => {
-  const feedbacks = useSelector(state => state.feedback);
+  // const feedbacks = useSelector(state => state.feedback);
   return (
     <div>
-     {feedbacks.map((review) => {
+     {/* {feedbacks.map((review) => {
        return(
          <ReviewItem reveiw={review} key={review.id}/>
        );
-     })}   
-     <Button variant="contained">Submit</Button> 
+     })}    */}
     </div>
   )
 }

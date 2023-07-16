@@ -11,7 +11,6 @@ import Comments from "../Comments/Comments";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
-    const [input, setInput] = useState({ feelings:'',support:'',understanding:'',comments:'' });
 
   return (
     <div className="App">
@@ -22,16 +21,16 @@ function App() {
         </header>
 
         <Route path="/" exact>
-          <Feelings input={input} setInput={setInput}/>
+          <Feelings  />
         </Route>
         <Route path="/understanding">
-          <Understanding input={input} setInput={setInput}/>
+          <Understanding  />
         </Route>
         <Route path="/comments">
-          <Comments input={input} setInput={setInput}/>
+          <Comments  />
         </Route>
         <Route path="/support">
-          <Support input={input} setInput={setInput}/>
+          <Support  />
         </Route>
         <Route path="/review">
           <Review />

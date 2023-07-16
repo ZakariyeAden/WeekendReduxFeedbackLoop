@@ -8,18 +8,38 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 
 // Reducers
-const feedback = (state = [], action) => {
-    if(action.type === 'GET_FEEDBACK'){
-        return [...state, action.payload];
-    }
+const feeling = (state = 0, action) => {
+   if(action.type === 'ADD_FEELING'){
+       return action.payload;
+   }
     return state;
 }
-
+const support = (state = 0, action) => {
+    if(action.type === 'ADD_SUPPORT'){
+        return action.payload;
+    }
+     return state;
+ }
+ const comment = (state = '', action) => {
+    if(action.type === 'ADD_COMMENT'){
+        return action.payload;
+    }
+     return state;
+ }
+ const understanding = (state = 0, action) => {
+    if(action.type === 'ADD_UNDERSTANDING'){
+        return action.payload;
+    }
+     return state;
+ }
 
 // Store, The store is the big JavaScript Object that holds all of the information for our application
 const store = createStore(
     combineReducers({
-        feedback
+        feeling,
+        support,
+        comment,
+        understanding
     }),
     applyMiddleware(logger)
 );
