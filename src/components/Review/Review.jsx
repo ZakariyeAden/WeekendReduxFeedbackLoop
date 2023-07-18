@@ -6,10 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 const Review = () => {
   // Display the information from the store.Use useSelector
-  const feeling = useSelector(state => state.feeling);
-  const support = useSelector(state => state.support);
-  const comments = useSelector(state => state.comment);
-  const understanding = useSelector(state => state.understanding);
+  const feedback = useSelector(state => state.feedback);
   // HOOKS
   const history = useHistory();
   const [showSubmit, setShowSubmit] = useState(false);
@@ -24,10 +21,7 @@ const Review = () => {
     axios
       .post("/feedback", {
         // Data to submit
-        feeling,
-        understanding,
-        support,
-        comments,
+        feedback,
       })
       .then(response => {
         // Console log if it submmited to the DB then check
@@ -37,17 +31,17 @@ const Review = () => {
       .catch(err => {
         console.log("ERRROR in submiting to the Server DB", err);
       });
-      // Go to thank you page
-      history.push('/thankyou')
+    // Go to thank you page
+    history.push("/thankyou");
   };
   return (
     <div className="review">
       <h2>Review Your Feedback</h2>
       <ul>
-        <li>Feelings:{feeling}</li>
-        <li>Understanding:{understanding}</li>
-        <li>Support:{support}</li>
-        <li>Comments:{comments}</li>
+        <li>Feelings:{feedback.feeling}</li>
+        <li>Support{feedback.support}</li>
+        <li>Understanding{feedback.understanding}</li>
+        <li>Comments:{feedback.comment}</li>
       </ul>
 
       <Button variant="contained" onClick={handleSubmit}>

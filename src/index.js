@@ -39,11 +39,6 @@ const feedback = (state = defaultState, action) => {
 // Store, The store is the big JavaScript Object that holds all of the information for our application
 const store = createStore(
   combineReducers({
-    feeling,
-    support,
-    comment,
-    understanding,
-    reset,
     feedback,
   }),
   applyMiddleware(logger)
