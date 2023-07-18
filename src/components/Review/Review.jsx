@@ -12,16 +12,20 @@ const Review = () => {
   const [showSubmit, setShowSubmit] = useState(false);
 
   //****  Hide the submit if its not filled
-  // if(feeling && support && understanding && comment){
-  //   setShowSubmit(!showSubmit)
-  // }
+  // Still in progress
+  if (
+    feedback.feeling === "" ||
+    feedback.support === "" ||
+    feedback.comment === "" ||
+    feedback.understanding === ""
+  ) {
+    setShowSubmit(!showSubmit);
+  }
 
   // Submit it to the Server DB table
   const handleSubmit = () => {
     axios
-      .post("/feedback", 
-        feedback
-      )
+      .post("/feedback", feedback)
       .then(response => {
         // Console log if it submmited to the DB then check
         console.log("Submitted to the Server DB");
