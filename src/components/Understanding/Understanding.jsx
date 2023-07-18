@@ -12,7 +12,7 @@ const Understanding = () => {
   const handleUnderstanding = event => {
     event.preventDefault();
     dispatch({
-      type: "ADD_UNDERSTANDING",
+      type: "GET_UNDERSTANDING",
       payload: input,
     });
     // GO to support page

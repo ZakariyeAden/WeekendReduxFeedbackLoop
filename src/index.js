@@ -1,60 +1,58 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './components/App/App';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./components/App/App";
 // Redux
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
+let defaultState = {
+  feeling: "",
+  comment: "",
+  understanding: "",
+  support: "",
+};
 // Reducers
-const feeling = (state = 0, action) => {
-   if(action.type === 'ADD_FEELING'){
-       return action.payload;
-   }
-    return state;
-}
-const support = (state = 0, action) => {
-    if(action.type === 'ADD_SUPPORT'){
-        return action.payload;
+const feedback = (state = defaultState, action) => {
+  switch (action.type) {
+    case "GET_FEELING": {
+      return {...state, feeling:action.payload};
     }
-     return state;
- }
- const comment = (state = '', action) => {
-    if(action.type === 'ADD_COMMENT'){
-        return action.payload;
+    case "GET_SUPPORT": {
+      return {...state, support:action.payload};
     }
-     return state;
- }
- const understanding = (state = 0, action) => {
-    if(action.type === 'ADD_UNDERSTANDING'){
-        return action.payload;
+    case "GET_UNDERSTANDING": {
+      return {...state, understanding:action.payload};
     }
-     return state;
- }
- const reset = (state = [], action) => {
-     if (action.type === "THANKYOU") {
-        return feeling(undefined, action) && support(undefined, action) && comment(undefined, action) && understanding(undefined, action);
-      } 
+    case "GET_COMMENT": {
+      return {...state, comment:action.payload};
+    }
+    case "THANK_YOU": {
+        return '';
+      }
+    default:
       return state;
- }
+  }
+};
 
 // Store, The store is the big JavaScript Object that holds all of the information for our application
 const store = createStore(
-    combineReducers({
-        feeling,
-        support,
-        comment,
-        understanding,
-        reset
-    }),
-    applyMiddleware(logger)
+  combineReducers({
+    feeling,
+    support,
+    comment,
+    understanding,
+    reset,
+    feedback,
+  }),
+  applyMiddleware(logger)
 );
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
-        <Provider store={store}>
-        <App />
-        </Provider>
-    </React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );

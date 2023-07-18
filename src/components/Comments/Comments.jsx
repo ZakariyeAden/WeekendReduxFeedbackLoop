@@ -12,7 +12,7 @@ const Comments = () => {
   const handleComments = event => {
     event.preventDefault();
     dispatch({
-      type: "ADD_COMMENT",
+      type: "GET_COMMENT",
       payload: input,
     });
     // Go to review page

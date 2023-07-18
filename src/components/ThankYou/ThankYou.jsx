@@ -8,7 +8,7 @@ const Thankyou = () => {
   const dispatch = useDispatch();
   const handleReset = () => {
     dispatch({
-      type: "THANKYOU",
+      type: "THANK_YOU",
     });
     // Go back to Feelings page
     history.push("/");

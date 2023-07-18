@@ -13,7 +13,7 @@ const Support = () => {
   const handleSupport = event => {
     event.preventDefault();
     dispatch({
-      type: "ADD_SUPPORT",
+      type: "GET_SUPPORT",
       payload: input,
     });
     // Go to comments page

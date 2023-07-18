@@ -13,7 +13,7 @@ const Feelings = () => {
     event.preventDefault();
 
     dispatch({
-      type: "ADD_FEELING",
+      type: "GET_FEELING",
       payload: input,
     });
     // Go to understanding page
