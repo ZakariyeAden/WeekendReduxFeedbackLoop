@@ -19,10 +19,9 @@ const Review = () => {
   // Submit it to the Server DB table
   const handleSubmit = () => {
     axios
-      .post("/feedback", {
-        // Data to submit
-        feedback,
-      })
+      .post("/feedback", 
+        feedback
+      )
       .then(response => {
         // Console log if it submmited to the DB then check
         console.log("Submitted to the Server DB");
